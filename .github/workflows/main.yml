@@ -1,18 +1,22 @@
-name: FlutterCI
-on: [push,pull_request]
+name: FlutterCI #CI名称
+on: [push] #触发条件push操作！
 
 jobs:
   check:
     name: Test on ${{ matrix.os }}
-    #The type of machine to run the job on. [windows,macos, ubuntu , self-hosted]
+    #运行在哪个平台这里是MacOS平台
     runs-on: macos-latest
     
     steps:
-      - uses: actions/checkout@v1
-      # Setup a flutter environment.
-      # https://github.com/marketplace/actions/flutter-action
+      - uses: actions/checkout@v1#固定写法
+	 #三方flutter的Action，它可以在服务器配置一个Flutter环境
       - uses: subosito/flutter-action@v1
         with:
-          flutter-version: '1.17.4'
+          flutter-version: '1.17.1'
           channel: 'stable'
+	#想让我们CI做的事情！
       - run: cd flutter_model && flutter build ios-framework --cocoapods --output=../NativeDemo/Flutter 
+      - run: |
+         git add .
+         git commit -m 'update flutter framework'
+         git push origin master
