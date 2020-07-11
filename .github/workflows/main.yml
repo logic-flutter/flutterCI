@@ -9,12 +9,12 @@ jobs:
     
     steps:
       - uses: actions/checkout@v1#固定写法
-	 #三方flutter的Action，它可以在服务器配置一个Flutter环境
+      #三方flutter的Action，它可以在服务器配置一个Flutter环境
       - uses: subosito/flutter-action@v1
         with:
           flutter-version: '1.17.1'
           channel: 'stable'
-	#想让我们CI做的事情！
+      #想让我们CI做的事情！
       - run: cd flutter_model && flutter build ios-framework --cocoapods --output=../NativeDemo/Flutter 
       - run: |
          git add .
