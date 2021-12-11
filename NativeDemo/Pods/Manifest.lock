@@ -1,0 +1,16 @@
+PODS:
+  - Flutter (2.5.300)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter/Debug/Flutter.podspec`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :podspec: Flutter/Debug/Flutter.podspec
+
+SPEC CHECKSUMS:
+  Flutter: 562b84027ec0acae5b2e05a73d1d7f04ac8b22c8
+
+PODFILE CHECKSUM: 992e2bc5dbe383e6010ed80693984a738c86f195
+
+COCOAPODS: 1.10.2
